@@ -1,29 +1,38 @@
 <?php
-class database{
-    private $host;
-    private $port;
-    private $dbname;
-    private $user;
-    private $password;
+
+class database
+{
+    private $host = "localhost";
+    private $port = "3306";
+    private $dbname = "gestion_productos";
+    private $user = "root";
+    private $password = "";
     private $connection;
 
-    public function __construct(){
-        $env = parse_ini_file(__DIR__ . "/../.env");
+    public function connect()
+    {
+        try {
 
-        $this->host = $env["BD_HOST"];
-        $this->port = $env["BD_PORT"];
-        $this->dbname = $env["BD_NAME"];
-        $this->user = $env["BD_USER"];
-        $this->password = $env["BD_PASSWORD"];
+            $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->dbname};charset=utf8";
+
+            $this->connection = new PDO(
+                $dsn,
+                $this->user,
+                $this->password
+            );
+
+            $this->connection->setAttribute(
+                PDO::ATTR_ERRMODE,
+                PDO::ERRMODE_EXCEPTION
+            );
+
+            return $this->connection;
+
+        } catch (PDOException $e) {
+
+            die("Error de conexión: " . $e->getMessage());
+
+        }
     }
-
-    public function connect(){
-        $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->dbname}";
-
-        $this->connection = new PDO ($dsn,$this->user,-$this->password);
-
-        return $this->connection;
-    }
-
-    }
+}
 ?>
