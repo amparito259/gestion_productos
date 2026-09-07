@@ -1,21 +1,19 @@
 <?php
-require_once __DIR__ . "/../../config/Database.php";
 
-class clientes {
+require_once __DIR__ . '/../../config/Database.php';
+
+class Proveedor {
+
     private $connection;
 
-    public function __construct()
-    {
+    public function __construct() {
         $database = new Database();
         $this->connection = $database->connect();
     }
 
     public function getAll() {
-        // Se cambió 'clientes' por 'cliente' (nombre real de la tabla)
-        $sql = "SELECT * FROM cliente"; 
-
+        $sql = "SELECT * FROM proveedores";
         $consulta = $this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
 }
-?>
