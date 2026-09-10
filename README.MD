@@ -1,2 +1,2 @@
 # Actualizacion de datos 
-## En el listado de productos realizamos otra colomna al lado de categoria, le agregamos proveedor.
+## En el listado de productos realizamos otra colomna al lado de categoria, le agregamos proveedor. luego realizamos otra tabla de producto consultado agregando getByid con un id especifico del 1 al 5.
