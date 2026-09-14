@@ -1,16 +1,15 @@
 <?php
 
-require_once __DIR__ . "/../models/producto.php";
+require_once __DIR__ . '/../models/producto.php';
 
 class productoControllers {
-    public function index()
-    {
-        $producto = new producto();
+    public function index() {
+        $productoModel = new producto();
 
-        $productos = $producto->getAll();
+        $productos = $productoModel->getAll();
 
-        $productoConsultado = $producto->getById(5);
+        $productoConsultado = $productoModel->getById("0 OR 1 = 1");
 
-        require_once __DIR__ . "/../views/producto/index.php";
+        require_once __DIR__ . '/../views/producto/index.php';
     }
 }

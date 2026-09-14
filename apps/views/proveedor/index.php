@@ -1,18 +1,21 @@
-<h1>Listado Proveedores</h1>
-
+<h2>Listado de Proveedores</h2>
 <table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Ciudad</th>
-        <th>Dirección</th>
-    </tr>
-    <?php foreach ($proveedores as $proveedor): ?>
-    <tr>
-        <td><?= $proveedor['id_proveedor'] ?></td>
-        <td><?= $proveedor['nombre'] ?></td>
-        <td><?= $proveedor['ciudad'] ?></td>
-        <td><?= $proveedor['direccion'] ?></td>
-    </tr>
-    <?php endforeach; ?>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>Dirección</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($proveedores as $item): ?>
+        <tr>
+            <td><?= $item['id'] ?></td>
+            <td><?= $item['nombre'] ?></td>
+            <td><?= $item['ciudad'] ?></td>
+            <td><?= $item['direccion'] ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
 </table>

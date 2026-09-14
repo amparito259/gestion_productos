@@ -1,18 +1,19 @@
-<h1>Listado Categorías</h1>
-
+<h2>Listado de Categorías de Cosméticos</h2>
 <table border="1">
+    <thead>
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Descripción</th>
         </tr>
-        <?php foreach ($categorias as $categoria): ?>
-            <tr>
-                <td><?= $categoria['id_categoria'] ?></td>
-                <td><?= $categoria['nombre'] ?></td>
-                <td><?= $categoria['descripcion'] ?></td>
-                
-            </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($categorias as $item): ?>
+        <tr>
+            <td><?= $item['id'] ?></td>
+            <td><?= $item['nombre'] ?></td>
+            <td><?= $item['descripcion'] ?></td>
+        </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
