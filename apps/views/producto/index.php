@@ -1,6 +1,5 @@
-<!-- 1. Tabla general con foreach -->
 <h1>Listado de Productos</h1>
-
+<?php if (!empty($producto)) { ?>
 <table border="1">
     <tr>
         <th>ID</th>
@@ -9,8 +8,8 @@
         <th>Categoria</th>
         <th>Descripcion</th>
         <th>Proveedor</th>
-    </tr>
-    <?php foreach ($productos as $product): ?>
+    </tr> 
+<?php foreach ($productos as $product): ?>
     <tr>
         <td><?= $product['id'] ?? '' ?></td>
         <td><?= $product['nombre'] ?? '' ?></td>
@@ -22,10 +21,14 @@
     <?php endforeach; ?>
 </table>
 
+    <?php } else { ?>
+    <p>No hay productos disponibles.</p>
+    <?php } ?>
+
 <br><br>
 
 <h1>Producto Consultado</h1>
-
+<?php if (!empty($productoConsultados)) { ?>
 <table border="1">
     <tr>
         <th>ID</th>
@@ -35,7 +38,7 @@
         <th>Descripción</th>
         <th>Proveedor</th>
     </tr>
-    <?php foreach ($productoConsultado as $product): ?>
+ <?php foreach ($productoConsultado as $product): ?>
     <tr>
         <td><?= $product['id'] ?? '' ?></td>
         <td><?= $product['nombre'] ?? '' ?></td>
@@ -46,3 +49,9 @@
     </tr>
     <?php endforeach; ?>
 </table>
+
+    <?php } else { ?>
+    <p>No se encontraron productos consultados.</p>
+    <?php } ?>
+
+   

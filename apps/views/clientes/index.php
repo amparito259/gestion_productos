@@ -1,5 +1,5 @@
 <h1>Listado de los clientes</h1>
-
+<?php if (!empty($cliente)) { ?>
 <table border="2">
     <thead>
         <tr>
@@ -11,7 +11,8 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($clientes as $cliente): ?>
+
+            <?php foreach ($clientes as $cliente): ?>
             <tr>
                 <td><?= $cliente['id'] ?></td>
                 <td><?= $cliente['nombre'] ?></td>
@@ -22,3 +23,8 @@
         <?php endforeach; ?>
     </tbody>
 </table>
+
+    <?php } else { ?>
+    <p>No hay clientes disponibles.</p>
+    <?php } ?>
+    

@@ -13,7 +13,7 @@ class Database
     {
         try {
 
-            $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->dbname};charset=utf8";
+            $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->dbname}";
 
             $this->connection = new PDO(
                 $dsn,
@@ -30,7 +30,7 @@ class Database
 
         } catch (PDOException $e) {
 
-            die("Error de conexión: " . $e->getMessage());
+            echo "Error de conexión: " . $e->getMessage();
 
         }
     }

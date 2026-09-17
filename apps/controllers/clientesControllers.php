@@ -3,9 +3,7 @@
 require_once __DIR__ . "/../models/clientes.php";
 
 class ClientesController {
-    public function index()
-    {
-    
+    public function index(){
         $clienteModel = new clientes();
 
         $clientes = $clienteModel->getAll();

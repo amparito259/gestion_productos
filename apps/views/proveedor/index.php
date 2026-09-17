@@ -1,4 +1,5 @@
 <h2>Listado de Proveedores</h2>
+<?php if (!empty($proveedor)) { ?>
 <table border="1">
     <thead>
         <tr>
@@ -9,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($proveedores as $item): ?>
+ <?php foreach ($proveedores as $item): ?>
         <tr>
             <td><?= $item['id'] ?></td>
             <td><?= $item['nombre'] ?></td>
@@ -19,3 +20,9 @@
         <?php endforeach; ?>
     </tbody>
 </table>
+
+        <?php } else { ?>
+    <p>No hay proveedores disponibles.</p>
+    <?php } ?>
+
+       
